@@ -1,11 +1,11 @@
 #MySql Query Helper (for .NET/c#)
 
--Installation
+*-Installation*
 
 	- Download and install MySql Connector at https://dev.mysql.com/downloads/connector/net/6.9.html
 	- Add MySql.Data as a reference
 
--SELECT statement:
+*-SELECT statement:*
 
 	var db = new MySqlQueryHelper("Server=localhost;Port=3306;Database=test;Uid=root;Pwd=;charset=utf8;Convert Zero Datetime=True");
     var users = db.Select("SELECT * FROM `users`");
@@ -19,17 +19,17 @@
 	var users = db.Select("SELECT * FROM `users` WHERE `id`=@id", new {id = 1});
 	Console.WriteLine(users[0]["id"]);
 
--SELECT COUNT result
+*-SELECT COUNT result*
 
 	int userCount = db.Count("SELECT COUNT(*) FROM `users`");
 
--INSERT/UPDATE/DELETE records
+*-INSERT/UPDATE/DELETE records*
 
 	int effectedRow = db.Insert("INSERT INTO `users`(`username`,`email`) VALUES(@username,@email)", new {username = "abc", email="abc@abc.com" );
 	effectedRow = db.Update("UPDATE `users` SET `email`=@email WHERE `id`=@id", new {id = 1, email="test@abc.com");
 	effectedRow = db.Delete("DELETE FROM `users` WHERE `id`=@id", new {id = 1 );
 
--Using transaction
+*-Using transaction*
 
 	var transaction = db.Connection.BeginTransaction();  
 	int effectedRow1 = db.Update("UPDATE `users` SET `email`=@email WHERE `id`=@id", new {id = 1, email="test@abc.com");
