@@ -1,4 +1,4 @@
-#MySql Query Helper For c#
+#MySql Query Helper (for .NET/c#)
 
 -Installation
 
