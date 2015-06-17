@@ -3,7 +3,7 @@
 -Installation
 
 	- Download and install MySql Connector at https://dev.mysql.com/downloads/connector/net/6.9.html
-	- Add MySql.data as a reference
+	- Add MySql.Data as a reference
 
 -SELECT statement:
 
