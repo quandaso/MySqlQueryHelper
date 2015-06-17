@@ -25,7 +25,7 @@
 
 -INSERT/UPDATE/DELETE records
 
-	int effectedRow = db.Insert("INSERT INTO `users`(`username`,`email`) VALUES(@email)", new {username = "abc", email="abc@abc.com" );
+	int effectedRow = db.Insert("INSERT INTO `users`(`username`,`email`) VALUES(@username,@email)", new {username = "abc", email="abc@abc.com" );
 	effectedRow = db.Update("UPDATE `users` SET `email`=@email WHERE `id`=@id", new {id = 1, email="test@abc.com");
 	effectedRow = db.Delete("DELETE FROM `users` WHERE `id`=@id", new {id = 1 );
 
